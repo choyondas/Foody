@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 const Popular = () => {
 
     const [popular, setPopular] = useState([]);
@@ -8,13 +11,11 @@ const Popular = () => {
         getPopular();
     },[])
 
-    const getPopular = () => {
-        // const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`);
-        // const data = await api.json();
-        // setPopular(data.recipes);
-        fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=5`)
-            .then(res => res.json())
-        .then(data=>setPopular(data.recipes));
+    const getPopular = async() => {
+        const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`);
+        const data = await api.json();
+        setPopular(data.recipes);
+     
 
     }
 
@@ -23,15 +24,42 @@ const Popular = () => {
 
     return (
         <div>
-            {popular.map(recipe => {
-                return (
-                    <div key ={recipe.id}>
-                        <p>{ recipe.title }</p>
-                    </div>
-                )
-            })}
+            
+               
+                    <Wrapper>
+                        <h3>Trending Products</h3>
+
+                        <Splide>
+                        {popular.map(recipe => {
+                            return (
+                                <SplideSlide>
+                                <Card>
+                                    <p>{recipe.title}</p>
+                                    <img src={recipe.image} alt="" />
+                                    </Card>
+                                    </SplideSlide>
+                            );
+                        })}
+                            </Splide>
+                    </Wrapper>   
         </div>
     );
 };
 
+
+
+
+const Wrapper = styled.div`
+    margin:4rem 0rem;
+
+`
+const Card = styled.div`
+    min-height:25rem;
+    border-radius:2rem;
+    overflow:hidden;
+    img{
+        border-radius:2rem;
+
+    }
+`
 export default Popular;
