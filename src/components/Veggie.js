@@ -91,7 +91,7 @@ const Card = styled.div`
     color: white;
     width: 80%;
     text-align: center;
-    background: #2d7309;
+   background: #0000003d;
     border-radius: 1rem;
     padding: 4px;
     font-size: 13px;

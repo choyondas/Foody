@@ -100,7 +100,7 @@ const Card = styled.div`
         color:white;
         width:72%;
         text-align:center;
-        background:red;
+     background: #0000003d;
         border-radius:2rem;
         padding:17px;
 `;
