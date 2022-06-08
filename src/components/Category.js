@@ -42,7 +42,7 @@ align-items:center;
 border-radius:50%;
 margin-right:2rem;
 text-decoration:none;
-background:linear-gradient(30deg,#494947, #313132 );
+background: linear-gradient(21deg,#647fdc,#13137d );
 width:6rem;
 height:6rem;
 cursor:pointer;
