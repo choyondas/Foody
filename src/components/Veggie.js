@@ -44,7 +44,7 @@ const Veggie = () => {
                             return (
                                 <SplideSlide>
                                     <Card>
-                                        <p>{recipe.title}</p>
+                                        <p>{recipe.title.slice(0,30)}</p>
                                         <img src={recipe.image} alt="" />
                                         <Gradient></Gradient>
                                     </Card>
@@ -59,7 +59,8 @@ const Veggie = () => {
 
 
 const Wrapper = styled.div`
-    margin:4rem ;
+    margin: 4rem;
+    margin-top: -78px;
 
 `
 const Card = styled.div`
@@ -84,14 +85,12 @@ const Card = styled.div`
         box-shadow: 1px 4px 3px 3px #d7d7d7;
     }
     p{
-        position: absolute;
+position: absolute;
     z-index: 2;
     left: 5%;
-    bottom: 35%;
-    color: white;
+    bottom: 18%;
     width: 80%;
     text-align: center;
-   background: #0000003d;
     border-radius: 1rem;
     padding: 4px;
     font-size: 13px;

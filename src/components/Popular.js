@@ -54,7 +54,7 @@ const Popular = () => {
                             return (
                                 <SplideSlide>
                                     <Card>
-                                        <p>{recipe.title}</p>
+                                        <p>{recipe.title.slice(0, 30)}</p>
                                         <img src={recipe.image} alt="" />
                                         <Gradient></Gradient>
                                     </Card>
@@ -81,28 +81,26 @@ const Card = styled.div`
     position: relative;
     
     img{
-        border-radius:2rem;
-        position:absolute;
-        left:0;
-        width:90%;
-        height:90%;
-        object-fit:cover;
+            border-radius: 2rem;
+    position: absolute;
+    left: 0;
+    width: 90%;
+    height: 68%;
+    object-fit: cover;
         
         
 
     }
     p{
-        position:absolute;
-        z-index:2;
-        left:50%;
-        bottom:10%;
-        transform:translate(-57%, 0%);
-        color:white;
-        width:72%;
-        text-align:center;
-     background: #0000003d;
-        border-radius:2rem;
-        padding:17px;
+  position: absolute;
+    z-index: 2;
+    left: 50%;
+    bottom: 14%;
+    transform: translate(-57%,0%);
+    width: 72%;
+    text-align: center;
+    border-radius: 2rem;
+    padding: 17px;
 `;
 
 const Gradient = styled.div`

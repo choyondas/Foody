@@ -25,7 +25,7 @@ const getCuisine = async (name) => {
                     return (
                         <Card key={item.id}>
                             <img src={item.image} alt="" />
-                            <h4>{item.title}</h4>
+                            <h4>{item.title.slice(0, 30)}</h4>
                             
                     </Card>
                 )
