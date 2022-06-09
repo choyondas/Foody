@@ -13,7 +13,7 @@ const Search = () => {
     const submitHandler = e => {
         e.preventDefault();
         Navigate('/searched/' + input);
-        e.target.reset();
+        e.target.value = '';
 }
 
     return (

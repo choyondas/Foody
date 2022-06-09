@@ -24,8 +24,10 @@ const getCuisine = async (name) => {
                 cuisine.map((item) => {
                     return (
                         <Card key={item.id}>
-                            <img src={item.image} alt="" />
+                            <Link to={'/recipe/'+ item.id}>
+                             <img src={item.image} alt="" />
                             <h4>{item.title.slice(0, 30)}</h4>
+                            </Link>
                             
                     </Card>
                 )
